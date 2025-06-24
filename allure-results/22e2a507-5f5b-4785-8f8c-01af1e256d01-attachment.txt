@@ -1,0 +1,1 @@
+Element is not clickable until you click on the captcha check box manually

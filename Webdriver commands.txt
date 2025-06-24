@@ -1,0 +1,9 @@
+Webdriver commands:
+
+1: import  webdriver and then we can use commands of webdriver
+2: quit -> automatically close the browser
+3: Service -> in new selenium through service we will use browser
+
+Navigational commands:
+forward -> click on the forward arrow button on chrome
+back -> click on the back arrow button on chrome
