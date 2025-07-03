@@ -26,7 +26,8 @@ jobs:
 
       - name: Run tests and generate HTML report
         run: |
-          pytest --html=reports/test_report.html --self-contained-html
+          pytest Testcases/TestAppCard.py --html=reports/test_report.html --self-contained-html
+
 
       - name: Upload HTML Test Report
         uses: actions/upload-artifact@v4
