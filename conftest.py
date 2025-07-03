@@ -20,7 +20,7 @@ def driver(request):
     request.cls.driver = uc.Chrome(service=service, options=options,version_main=137)
     request.cls.driver.maximize_window()
     request.cls.driver.get(config.get("URL","base_url"))
-    time.sleep(3)
+    time.sleep(15)
     yield 
     request.cls.driver.quit()
  

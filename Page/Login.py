@@ -7,17 +7,17 @@ from selenium.webdriver.support import expected_conditions as EC
 class QRlogin:
     username_locator = (By.CSS_SELECTOR, "input[placeholder='name@example.com']")
     password_locator = (By.CSS_SELECTOR, "input[placeholder='********']")
-    button_locator = (By.CSS_SELECTOR, "body > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > button:nth-child(9)")
+    button_locator = (By.XPATH, "//button[text()='Sign In']")
 
     def __init__(self, driver):
         self.driver = driver
 
     def login(self, username, password):
         self.driver.find_element(*self.username_locator).send_keys(username)
-        time.sleep(6)
+        time.sleep(8)
         self.driver.find_element(*self.password_locator).send_keys(password)
-        time.sleep(5)
-        wait = WebDriverWait(self.driver,50)
-        button= wait.until(EC.element_to_be_clickable(self.button_locator))
-        button.click()
+        time.sleep(8)
+        
+        self.driver.find_element(*self.button_locator).click()
+       
         time.sleep(7)
