@@ -22,8 +22,8 @@ class QRlogin:
         #time.sleep(8)
 
         self.driver.find_element(*self.password_locator).send_keys(password)
-        time.sleep(8)
+        time.sleep(15)
         
         self.driver.find_element(*self.button_locator).click()
        
-        time.sleep(7)
+        time.sleep(15)
