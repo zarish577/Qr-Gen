@@ -16,21 +16,21 @@ def driver(request):
     options.add_argument("--ignore-certificate-errors")
 
     # 🧠 Detect CI or local run
-    is_ci = os.getenv("CI") == "true" or os.getenv("RUN_ENV") == "ci"
+   # is_ci = os.getenv("CI") == "true" or os.getenv("RUN_ENV") == "ci"
 
-    if is_ci:
+    #if is_ci:
         # ✅ Headless mode for GitHub Actions / CI
-        options.add_argument("--headless=new")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
+        #options.add_argument("--headless=new")
+        #options.add_argument("--no-sandbox")
+        #options.add_argument("--disable-dev-shm-usage")
 
-        driver = uc.Chrome(options=options)
-        driver.set_window_size(1920, 1080)
-    else:
+       # driver = uc.Chrome(options=options)
+        #driver.set_window_size(1920, 1080)
+    #else:
         # ✅ Visible Chrome for local automation
-        service = Service("chromedriver.exe")  # ✅ Local exe
-        driver = uc.Chrome(service=service, options=options, version_main=138)
-        driver.maximize_window()
+    service = Service("chromedriver.exe")  # ✅ Local exe
+    driver = uc.Chrome(service=service, options=options, version_main=138)
+    driver.maximize_window()
 
     driver.get(config.get("URL", "base_url"))
     request.cls.driver = driver
