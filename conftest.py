@@ -17,7 +17,7 @@ def driver(request):
     options.add_argument("--disable-blink-features=AutomationControlled") 
     options.add_argument("--ignore-certificate-errors")
     service = Service("chromedriver.exe")  # Update path if needed
-    request.cls.driver = uc.Chrome(service=service, options=options,version_main=137)
+    request.cls.driver = uc.Chrome(service=service, options=options,version_main=138)
     request.cls.driver.maximize_window()
     request.cls.driver.get(config.get("URL","base_url"))
     time.sleep(15)
