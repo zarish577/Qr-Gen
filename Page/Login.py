@@ -13,8 +13,11 @@ class QRlogin:
         self.driver = driver
 
     def login(self, username, password):
-        self.driver.find_element(*self.username_locator).send_keys(username)
-        time.sleep(8)
+
+        wait = WebDriverWait(self.driver,20)
+        wait.until(EC.element_to_be_clickable(*self.username_locator)).send_keys(username)
+        #self.driver.find_element(*self.username_locator).send_keys(username)
+        #time.sleep(8)
         self.driver.find_element(*self.password_locator).send_keys(password)
         time.sleep(8)
         
